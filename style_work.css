@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    margin 0 0 10px;
+    margin: 0 0 10px;
 }
 
 
@@ -70,7 +70,7 @@ p {
 }
 
 .intro__title {
-    margin 0;
+    margin: 0;
     font-size: 40px;
     text-transform: uppercase;
     color: #000;
@@ -81,7 +81,7 @@ p {
 
 
 .intro__text {
-    margin 0;
+    margin: 0;
     font-size: 20px;
     text-transform: uppercase;
     color: #000;

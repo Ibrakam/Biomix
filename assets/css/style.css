@@ -65,7 +65,7 @@ a, u {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+
 
 
 }
@@ -657,7 +657,8 @@ a, u {
     padding-top: 100px;
 
     background-color: #252525;
-    background: url("../../images/main_page.jpg") center no-repeat fixed;
+    background: url("../../images/main.jpg") center no-repeat fixed ;
+    /* background: url("../../images/main_page.jpg" ) center no-repeat fixed; */
     background: cover;
     background-position: top;
 
