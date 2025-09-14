@@ -88,6 +88,292 @@ a, u {
     padding: 0;
 }
 
+/* CALCULATOR
+==================== */
+
+.calculator {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #e03636 0%, #4a474c  100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.calculator::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/main_page.jpg') center/cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.calculator__block {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.calculator .block__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.calculator .block__subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.calculator__content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.calculator__table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.calculator__header {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: #fff;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.calculator__label {
+    color: #333;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    text-align: left;
+    padding: 15px 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.calculator__ingredients-header {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.calculator__ingredients-title {
+    font-weight: bold;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    text-align: left;
+    color: #fff;
+    font-size: 16px;
+}
+
+.calculator__price-label {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    padding: 15px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+}
+
+.calculator__percentage-label {
+    font-weight: bold;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+.calculator__ingredient {
+    text-align: left;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: 500;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.calculator__ingredient:hover {
+    background-color: #f8f9fa;
+}
+
+.calculator__input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.calculator__input:focus {
+    outline: none;
+    border-color: #4facfe;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+    transform: translateY(-1px);
+}
+
+.calculator__percentage {
+    text-align: center;
+    padding: 15px;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: bold;
+    color: #4facfe;
+    font-size: 16px;
+}
+
+.calculator__total-row {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.calculator__total-label {
+    font-weight: bold;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    text-align: left;
+    color: #fff;
+    font-size: 16px;
+}
+
+.calculator__button-cell {
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.calculator__button {
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.calculator__button:hover {
+    background: linear-gradient(135deg, #ff5252, #ff7043);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.calculator__result-cell {
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.calculator__result {
+    text-align: center;
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.calculator__spacer {
+    background-color: #fff;
+}
+
+.calculator__spacer-cell {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.calculator__quality-title {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    text-align: left;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.calculator__quality {
+    text-align: left;
+    padding: 12px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #555;
+    transition: background-color 0.3s ease;
+}
+
+.calculator__quality:hover {
+    background-color: #f8f9fa;
+}
+
+.calculator__unit {
+    text-align: center;
+    padding: 12px;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.calculator__value {
+    text-align: center;
+    padding: 12px;
+    background-color: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    font-weight: bold;
+    font-size: 14px;
+    color: #4facfe;
+}
+
+/* Responsive design for calculator */
+@media (max-width: 768px) {
+    .calculator__table {
+        max-width: 100%;
+        margin: 0 20px;
+    }
+    
+    .calculator__input {
+        font-size: 12px;
+        padding: 10px;
+    }
+    
+    .calculator__button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
 /* NAV
 ==================== */
 
@@ -130,6 +416,7 @@ a, u {
 
     height: 100vh;
     padding-top: 100px;
+
 
 /*    background: #000 url("../../images/main.jpg") center no-repeat / cover;*/
 

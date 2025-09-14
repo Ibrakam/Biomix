@@ -93,14 +93,179 @@
            </div>
            <a class="btn" href="#contacts" data-scroll="#contacts">Сделать заказ</a>
 
-
-
         </div>
     </div>
 </div>
 
+<!-- КАЛЬКУЛЯТОР СТОИМОСТИ КОРМА -->
+<div class="calculator" id="calculator">
+    <div class="container">
+        <div class="calculator__block">
+           <div class="block__title">РАССЧИТАЙТЕ СТОИМОСТЬ КОМБИКОРМА ДЛЯ БРОЙЛЕРОВ</div>
+           <div class="block__subtitle">Профессиональный калькулятор для точного расчета стоимости корма</div>
 
-
+           <div class="calculator__content">
+               <form id="feedCalculator" method="post">
+                   <table class="calculator__table">
+                       <thead>
+                           <tr>
+                               <th>&nbsp;</th>
+                               <th>&nbsp;</th>
+                               <th class="calculator__header" scope="col">Старт</th>
+                           </tr>
+                           <tr>
+                               <th class="calculator__label">Возраст</th>
+                               <th>&nbsp;</th>
+                               <th scope="col">0-10</th>
+                           </tr>
+                           <tr>
+                               <th class="calculator__label">Код продукта</th>
+                               <th>&nbsp;</th>
+                               <th scope="col">BS 20</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                           <tr class="calculator__ingredients-header">
+                               <th class="calculator__ingredients-title" scope="row">Ингредиенты</th>
+                               <td class="calculator__price-label">Цена за 1 кг</td>
+                               <td class="calculator__percentage-label">%</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">Пшеница, 12.8%</th>
+                               <td><input name="n1" required size="8" type="text" value="0" class="calculator__input"></td>
+                               <td class="calculator__percentage">34,50</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">Кукуруза, 7.8% СП</th>
+                               <td><input name="n2" required size="8" type="text" value="0" class="calculator__input"></td>
+                               <td class="calculator__percentage">26,20</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">Соевый шрот, 46% СП</th>
+                               <td><input name="n3" required size="8" type="text" value="0" class="calculator__input"></td>
+                               <td class="calculator__percentage">33,60</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">Масло подсолнечное</th>
+                               <td><input name="n5" required size="8" type="text" value="0" class="calculator__input"></td>
+                               <td class="calculator__percentage">1,00</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">Ronomix, Start 20</th>
+                               <td><input name="n6" required size="8" type="text" value="38080" class="calculator__input"></td>
+                               <td class="calculator__percentage">3,50</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">Известняк</th>
+                               <td><input name="n7" required size="8" type="text" value="0" class="calculator__input"></td>
+                               <td class="calculator__percentage">1,20</td>
+                           </tr>
+                           <tr class="calculator__total-row">
+                               <th scope="row" class="calculator__total-label">Итого за 1 кг корма:</th>
+                               <td class="calculator__button-cell">
+                                   <input type="button" value="Рассчитать" onclick="calculateFeed()" class="calculator__button">
+                               </td>
+                               <td class="calculator__result-cell">
+                                   <input name="res2" readonly size="8" type="text" value="0.00" class="calculator__result">
+                               </td>
+                           </tr>
+                           <tr class="calculator__spacer">
+                               <th class="calculator__spacer-cell"></th>
+                               <th class="calculator__spacer-cell"></th>
+                               <th class="calculator__spacer-cell"></th>
+                           </tr>
+                           <tr>
+                               <th class="calculator__quality-title">Показатели качества</th>
+                               <th class="calculator__spacer-cell"></th>
+                               <th class="calculator__spacer-cell"></th>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Обменная Энергия +Ф</th>
+                               <td class="calculator__unit">ккал/100г</td>
+                               <td class="calculator__value">301</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Сырой Протеин +Ф</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">23,20</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Линолевая кислота</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">1,62</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Сырая клетчатка</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">3,82</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Лизин усв.</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">1,32</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Метионин усв.</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">0,71</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Мет. + Цистин усв.</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">1,00</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Треонин усв.</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">0,88</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Триптофан усв.</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">0,21</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Аргинин усв.</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">1,40</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Ca</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">0,96</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">P усв.</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">0,50</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">K</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">0,90</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Na</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">0,19</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Cl</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">0,24</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Холин хлорид</th>
+                               <td class="calculator__unit">г/т</td>
+                               <td class="calculator__value">1723</td>
+                           </tr>
+                       </tbody>
+                   </table>
+               </form>
+           </div>
+        </div>
+    </div>
+</div>
 
 <div class="contacts" id="contacts">
     <div class="container">
@@ -180,6 +345,34 @@
 
 <!--  Javascript  -->
     <script src="assets/js/app.js"></script>
+    
+    <script>
+        function calculateFeed() {
+            // Получаем значения из полей ввода
+            var n1 = parseFloat(document.getElementsByName('n1')[0].value) || 0;
+            var n2 = parseFloat(document.getElementsByName('n2')[0].value) || 0;
+            var n3 = parseFloat(document.getElementsByName('n3')[0].value) || 0;
+            var n5 = parseFloat(document.getElementsByName('n5')[0].value) || 0;
+            var n6 = parseFloat(document.getElementsByName('n6')[0].value) || 0;
+            var n7 = parseFloat(document.getElementsByName('n7')[0].value) || 0;
+            
+            // Проценты для каждого ингредиента
+            var percentages = [34.50, 26.20, 33.60, 1.00, 3.50, 1.20];
+            var prices = [n1, n2, n3, n5, n6, n7];
+            
+            // Рассчитываем общую стоимость
+            var total = 0;
+            for (var i = 0; i < prices.length; i++) {
+                total += (prices[i] * percentages[i] / 100);
+            }
+            
+            // Округляем до 2 знаков после запятой
+            total = Math.round(total * 100) / 100;
+            
+            // Выводим результат
+            document.getElementsByName('res2')[0].value = total.toFixed(2);
+        }
+    </script>
 
 </body>
 </html>
