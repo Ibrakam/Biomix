@@ -110,23 +110,23 @@
                            <tr>
                                <th>&nbsp;</th>
                                <th>&nbsp;</th>
-                               <th class="calculator__header" scope="col">Рост</th>
-                               <th class="calculator__header" scope="col">Финиш</th>
-                               <th class="calculator__header" scope="col">Финиш-2</th>
+                               <th class="calculator__header" scope="col">ПС (Старт)</th>
+                               <th class="calculator__header" scope="col">ПКС (Рост)</th>
+                               <th class="calculator__header" scope="col">ПКС (Финиш)</th>
                            </tr>
                            <tr>
                                <th class="calculator__label">Возраст</th>
                                <th>&nbsp;</th>
-                               <th scope="col">11-24 дня</th>
-                               <th scope="col">25-39 дней</th>
-                               <th scope="col">40-забой</th>
+                               <th scope="col">0-10 дней</th>
+                               <th scope="col">11-28 дней</th>
+                               <th scope="col">29-42 дня</th>
                            </tr>
                            <tr>
                                <th class="calculator__label">Код продукта</th>
                                <th>&nbsp;</th>
-                               <th scope="col">BR 21/12.8</th>
-                               <th scope="col">BF 21/12.8</th>
-                               <th scope="col">BF2 21/12.8</th>
+                               <th scope="col">BIOMIX ПС-(0112) 3.5%</th>
+                               <th scope="col">BIOMIX ПКС (1328) 3.0%</th>
+                               <th scope="col">BIOMIX ПКС (2942) 3.0%</th>
                            </tr>
                        </thead>
                        <tbody>
@@ -138,53 +138,67 @@
                                <td class="calculator__percentage-label">%</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__ingredient">Пшеница, 12.8%</th>
-                               <td><input name="wheat_price" required size="8" type="text" value="0" class="calculator__input"></td>
-                               <td class="calculator__percentage">69.70</td>
-                               <td class="calculator__percentage">76.20</td>
-                               <td class="calculator__percentage">78.90</td>
+                               <th scope="row" class="calculator__ingredient">Кукуруза сп8%</th>
+                               <td><input name="corn_price" required size="8" type="text" value="0" class="calculator__input"></td>
+                               <td class="calculator__percentage">20.00</td>
+                               <td class="calculator__percentage">20.00</td>
+                               <td class="calculator__percentage">20.00</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__ingredient">Соевый шрот, 46% СП</th>
+                               <th scope="row" class="calculator__ingredient">Пшеница сп 12.5%</th>
+                               <td><input name="wheat_price" required size="8" type="text" value="0" class="calculator__input"></td>
+                               <td class="calculator__percentage">37.34</td>
+                               <td class="calculator__percentage">39.06</td>
+                               <td class="calculator__percentage">39.06</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">Шрот соевый сп 46%</th>
                                <td><input name="soy_price" required size="8" type="text" value="0" class="calculator__input"></td>
-                               <td class="calculator__percentage">25.00</td>
-                               <td class="calculator__percentage">18.60</td>
-                               <td class="calculator__percentage">16.00</td>
+                               <td class="calculator__percentage">34.95</td>
+                               <td class="calculator__percentage">20.38</td>
+                               <td class="calculator__percentage">20.38</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">Шрот подсолнечный сп 30.0%</th>
+                               <td><input name="sunflower_price" required size="8" type="text" value="0" class="calculator__input"></td>
+                               <td class="calculator__percentage">0.00</td>
+                               <td class="calculator__percentage">10.00</td>
+                               <td class="calculator__percentage">10.00</td>
                            </tr>
                            <tr>
                                <th scope="row" class="calculator__ingredient">Масло подсолнечное</th>
                                <td><input name="oil_price" required size="8" type="text" value="0" class="calculator__input"></td>
-                               <td class="calculator__percentage">1.50</td>
-                               <td class="calculator__percentage">1.70</td>
-                               <td class="calculator__percentage">1.90</td>
+                               <td class="calculator__percentage">2.48</td>
+                               <td class="calculator__percentage">6.66</td>
+                               <td class="calculator__percentage">6.66</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__ingredient">Ronomix, BR 21/12.8</th>
-                               <td><input name="ronomix_br_price" required size="8" type="text" value="34944" class="calculator__input"></td>
-                               <td class="calculator__percentage">3.00</td>
-                               <td class="calculator__percentage">0.00</td>
-                               <td class="calculator__percentage">0.00</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__ingredient">Ronomix, BF 21/12.8</th>
-                               <td><input name="ronomix_bf_price" required size="8" type="text" value="35168" class="calculator__input"></td>
-                               <td class="calculator__percentage">0.00</td>
-                               <td class="calculator__percentage">3.00</td>
-                               <td class="calculator__percentage">0.00</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__ingredient">Ronomix, BF2 21/12.8</th>
-                               <td><input name="ronomix_bf2_price" required size="8" type="text" value="36960" class="calculator__input"></td>
-                               <td class="calculator__percentage">0.00</td>
-                               <td class="calculator__percentage">0.00</td>
-                               <td class="calculator__percentage">2.50</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__ingredient">Известняк</th>
+                               <th scope="row" class="calculator__ingredient">Известняковая мука</th>
                                <td><input name="limestone_price" required size="8" type="text" value="0" class="calculator__input"></td>
-                               <td class="calculator__percentage">0.80</td>
-                               <td class="calculator__percentage">0.50</td>
-                               <td class="calculator__percentage">0.70</td>
+                               <td class="calculator__percentage">1.73</td>
+                               <td class="calculator__percentage">0.90</td>
+                               <td class="calculator__percentage">0.90</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">BIOMIX ПС-(0112) 3.5%</th>
+                               <td><input name="biomix_ps_price" required size="8" type="text" value="38080" class="calculator__input"></td>
+                               <td class="calculator__percentage">3.50</td>
+                               <td class="calculator__percentage">0.00</td>
+                               <td class="calculator__percentage">0.00</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">BIOMIX ПКС (1328) 3.0%</th>
+                               <td><input name="biomix_pks_price" required size="8" type="text" value="38080" class="calculator__input"></td>
+                               <td class="calculator__percentage">0.00</td>
+                               <td class="calculator__percentage">3.00</td>
+                               <td class="calculator__percentage">0.00</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">BIOMIX ПКС (2942) 3.0%</th>
+                               <td><input name="biomix_pks2_price" required size="8" type="text" value="38080" class="calculator__input"></td>
+                               <td class="calculator__percentage">0.00</td>
+                               <td class="calculator__percentage">0.00</td>
+                               <td class="calculator__percentage">3.00</td>
                            </tr>
                            <tr class="calculator__total-row">
                                <th scope="row" class="calculator__total-label">Итого за 1 кг корма:</th>
@@ -218,128 +232,86 @@
                            <tr>
                                <th scope="row" class="calculator__quality">Обменная Энергия +Ф</th>
                                <td class="calculator__unit">ккал/100г</td>
-                               <td class="calculator__value">3100</td>
-                               <td class="calculator__value">3200</td>
-                               <td class="calculator__value">3300</td>
+                               <td class="calculator__value">3000.39</td>
+                               <td class="calculator__value">3100.33</td>
+                               <td class="calculator__value">3200.25</td>
                            </tr>
                            <tr>
                                <th scope="row" class="calculator__quality">Сырой Протеин +Ф</th>
                                <td class="calculator__unit">%</td>
-                               <td class="calculator__value">21.5</td>
-                               <td class="calculator__value">19.5</td>
-                               <td class="calculator__value">18.0</td>
+                               <td class="calculator__value">23.00</td>
+                               <td class="calculator__value">21.50</td>
+                               <td class="calculator__value">19.50</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__quality">Линолевая кислота</th>
+                               <th scope="row" class="calculator__quality">Кальций</th>
                                <td class="calculator__unit">%</td>
-                               <td class="calculator__value">2.1</td>
-                               <td class="calculator__value">2.3</td>
-                               <td class="calculator__value">2.5</td>
+                               <td class="calculator__value">0.96</td>
+                               <td class="calculator__value">0.87</td>
+                               <td class="calculator__value">0.78</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Доступный фосфор</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">0.42</td>
+                               <td class="calculator__value">0.35</td>
+                               <td class="calculator__value">0.33</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Лизин</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">1.56</td>
+                               <td class="calculator__value">1.40</td>
+                               <td class="calculator__value">1.28</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Метионин</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">0.67</td>
+                               <td class="calculator__value">0.59</td>
+                               <td class="calculator__value">0.54</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Треонин</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">1.07</td>
+                               <td class="calculator__value">0.97</td>
+                               <td class="calculator__value">0.88</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Триптофан</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value">0.32</td>
+                               <td class="calculator__value">0.30</td>
+                               <td class="calculator__value">0.27</td>
                            </tr>
                            <tr>
                                <th scope="row" class="calculator__quality">Сырая клетчатка</th>
                                <td class="calculator__unit">%</td>
-                               <td class="calculator__value">2.9</td>
-                               <td class="calculator__value">3.1</td>
-                               <td class="calculator__value">3.3</td>
+                               <td class="calculator__value">3.01</td>
+                               <td class="calculator__value">2.93</td>
+                               <td class="calculator__value">2.80</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__quality">Лизин усв.</th>
+                               <th scope="row" class="calculator__quality">Сырой жир</th>
                                <td class="calculator__unit">%</td>
-                               <td class="calculator__value">1.4</td>
-                               <td class="calculator__value">1.3</td>
-                               <td class="calculator__value">1.2</td>
+                               <td class="calculator__value">4.68</td>
+                               <td class="calculator__value">5.53</td>
+                               <td class="calculator__value">6.50</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__quality">Метионин усв.</th>
+                               <th scope="row" class="calculator__quality">Линолевая кислота</th>
                                <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0.6</td>
-                               <td class="calculator__value">0.55</td>
-                               <td class="calculator__value">0.5</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Мет. + Цистин усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0.95</td>
-                               <td class="calculator__value">0.9</td>
-                               <td class="calculator__value">0.85</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Треонин усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0.97</td>
-                               <td class="calculator__value">0.92</td>
-                               <td class="calculator__value">0.88</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Триптофан усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0.3</td>
-                               <td class="calculator__value">0.28</td>
-                               <td class="calculator__value">0.26</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Аргинин усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">1.4</td>
-                               <td class="calculator__value">1.3</td>
-                               <td class="calculator__value">1.2</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Валин усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0.95</td>
-                               <td class="calculator__value">0.9</td>
-                               <td class="calculator__value">0.85</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Изолейцин усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0.8</td>
-                               <td class="calculator__value">0.75</td>
-                               <td class="calculator__value">0.7</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Ca</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0.87</td>
-                               <td class="calculator__value">0.78</td>
-                               <td class="calculator__value">0.7</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">P усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0.35</td>
-                               <td class="calculator__value">0.33</td>
-                               <td class="calculator__value">0.31</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">K</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0.85</td>
-                               <td class="calculator__value">0.8</td>
-                               <td class="calculator__value">0.75</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Na</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0.19</td>
-                               <td class="calculator__value">0.18</td>
-                               <td class="calculator__value">0.17</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Cl</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0.27</td>
-                               <td class="calculator__value">0.26</td>
-                               <td class="calculator__value">0.25</td>
+                               <td class="calculator__value">1.95</td>
+                               <td class="calculator__value">2.23</td>
+                               <td class="calculator__value">2.61</td>
                            </tr>
                            <tr>
                                <th scope="row" class="calculator__quality">Холин хлорид</th>
                                <td class="calculator__unit">г/т</td>
+                               <td class="calculator__value">2000</td>
                                <td class="calculator__value">1900</td>
                                <td class="calculator__value">1700</td>
-                               <td class="calculator__value">1500</td>
                            </tr>
                        </tbody>
                    </table>
@@ -394,48 +366,50 @@
     // Функция расчета для всех трех стадий
     function calculateFeed() {
         // Получаем цены
+        const cornPrice = parseFloat(document.querySelector('input[name="corn_price"]').value) || 0;
         const wheatPrice = parseFloat(document.querySelector('input[name="wheat_price"]').value) || 0;
         const soyPrice = parseFloat(document.querySelector('input[name="soy_price"]').value) || 0;
+        const sunflowerPrice = parseFloat(document.querySelector('input[name="sunflower_price"]').value) || 0;
         const oilPrice = parseFloat(document.querySelector('input[name="oil_price"]').value) || 0;
-        const ronomixBrPrice = parseFloat(document.querySelector('input[name="ronomix_br_price"]').value) || 0;
-        const ronomixBfPrice = parseFloat(document.querySelector('input[name="ronomix_bf_price"]').value) || 0;
-        const ronomixBf2Price = parseFloat(document.querySelector('input[name="ronomix_bf2_price"]').value) || 0;
         const limestonePrice = parseFloat(document.querySelector('input[name="limestone_price"]').value) || 0;
+        const biomixPsPrice = parseFloat(document.querySelector('input[name="biomix_ps_price"]').value) || 0;
+        const biomixPksPrice = parseFloat(document.querySelector('input[name="biomix_pks_price"]').value) || 0;
+        const biomixPks2Price = parseFloat(document.querySelector('input[name="biomix_pks2_price"]').value) || 0;
         
-        // Проценты для каждой стадии
-        const growthPercentages = [69.70, 25.00, 1.50, 3.00, 0.00, 0.00, 0.80];
-        const finishPercentages = [76.20, 18.60, 1.70, 0.00, 3.00, 0.00, 0.50];
-        const finish2Percentages = [78.90, 16.00, 1.90, 0.00, 0.00, 2.50, 0.70];
+        // Проценты для каждой стадии (ПС, ПКС, ПКС-2)
+        const psPercentages = [20.00, 37.34, 34.95, 0.00, 2.48, 1.73, 3.50, 0.00, 0.00];
+        const pksPercentages = [20.00, 39.06, 20.38, 10.00, 6.66, 0.90, 0.00, 3.00, 0.00];
+        const pks2Percentages = [20.00, 39.06, 20.38, 10.00, 6.66, 0.90, 0.00, 0.00, 3.00];
         
-        // Цены в том же порядке: пшеница, соя, масло, ronomix_br, ronomix_bf, ronomix_bf2, известняк
-        const prices = [wheatPrice, soyPrice, oilPrice, ronomixBrPrice, ronomixBfPrice, ronomixBf2Price, limestonePrice];
+        // Цены в том же порядке: кукуруза, пшеница, соя, подсолнечник, масло, известняк, biomix_ps, biomix_pks, biomix_pks2
+        const prices = [cornPrice, wheatPrice, soyPrice, sunflowerPrice, oilPrice, limestonePrice, biomixPsPrice, biomixPksPrice, biomixPks2Price];
         
-        // Расчет для Роста
-        let growthTotal = 0;
+        // Расчет для ПС (Старт)
+        let psTotal = 0;
         for (let i = 0; i < prices.length; i++) {
-            growthTotal += (prices[i] * growthPercentages[i] / 100);
+            psTotal += (prices[i] * psPercentages[i] / 100);
         }
         
-        // Расчет для Финиша
-        let finishTotal = 0;
+        // Расчет для ПКС (Рост)
+        let pksTotal = 0;
         for (let i = 0; i < prices.length; i++) {
-            finishTotal += (prices[i] * finishPercentages[i] / 100);
+            pksTotal += (prices[i] * pksPercentages[i] / 100);
         }
         
-        // Расчет для Финиш-2
-        let finish2Total = 0;
+        // Расчет для ПКС-2 (Финиш)
+        let pks2Total = 0;
         for (let i = 0; i < prices.length; i++) {
-            finish2Total += (prices[i] * finish2Percentages[i] / 100);
+            pks2Total += (prices[i] * pks2Percentages[i] / 100);
         }
         
         // Округляем и выводим результаты
-        growthTotal = Math.round(growthTotal * 100) / 100;
-        finishTotal = Math.round(finishTotal * 100) / 100;
-        finish2Total = Math.round(finish2Total * 100) / 100;
+        psTotal = Math.round(psTotal * 100) / 100;
+        pksTotal = Math.round(pksTotal * 100) / 100;
+        pks2Total = Math.round(pks2Total * 100) / 100;
         
-        document.querySelector('input[name="result_growth"]').value = growthTotal.toFixed(2);
-        document.querySelector('input[name="result_finish"]').value = finishTotal.toFixed(2);
-        document.querySelector('input[name="result_finish2"]').value = finish2Total.toFixed(2);
+        document.querySelector('input[name="result_growth"]').value = psTotal.toFixed(2);
+        document.querySelector('input[name="result_finish"]').value = pksTotal.toFixed(2);
+        document.querySelector('input[name="result_finish2"]').value = pks2Total.toFixed(2);
     }
 </script>
 
