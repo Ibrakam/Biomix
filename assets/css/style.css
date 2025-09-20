@@ -216,7 +216,7 @@ a, u {
 
 .calculator__table {
     width: 100%;
-    max-width: 800px;
+    max-width: 1000px;
     border-collapse: collapse;
     background-color: #fff;
     border-radius: 20px;
@@ -581,6 +581,93 @@ a, u {
     .calculator__result {
         font-size: 12px;
         padding: 6px;
+    }
+}
+
+/* Стили для выбора типа рациона */
+.calculator__type-selection {
+    margin-bottom: 40px;
+}
+
+.calculator__type-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.calculator__type-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.calculator__type-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calculator__type-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.calculator__type-btn.active {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Адаптивность для кнопок выбора типа */
+@media (max-width: 768px) {
+    .calculator__type-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .calculator__type-buttons {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .calculator__type-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator__type-title {
+        font-size: 18px;
+    }
+    
+    .calculator__type-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .calculator__type-btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 12px 15px;
+        font-size: 11px;
     }
 }
 
