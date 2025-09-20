@@ -1,19 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/style.css?v=20250914">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>BIOMIX - Производство кормовых добавок</title>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap&subset=cyrillic-ext" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css?v=20250914">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BIOMIX - Производство кормовых добавок</title>
+</head>
 <body>
 
 <!-- HEADER -->
-
 <header class="header">
     <div class="container">
         <div class="header__inner">
@@ -85,7 +81,10 @@
 
 <b>ПОБОЧНЫЕ ДЕЙСТВИЯ</b><br><br>
 
-Данный продукт изготовлен из натуральных природных компонентов. Не содержит антибиотики, стимуляторы роста, гормональные препараты и ГМО. Побочных явлений и осложнений при применении продукта выявлено не было, противопоказаний не установлено. После применения продукта яйцо и мясо птиц используется без ограничений.
+Данный продукт изготовлен из натуральных природных компонентов. Не содержит антибиотики, стимуляторы роста, гормональные препараты и ГМО. Побочных явлений и осложнений при применении продукта выявлено не было, противопоказаний не установлено. После применения продукта мясо и молоко животных используется без ограничений.<br><br>
+
+
+
 
                         </p>
 
@@ -96,14 +95,29 @@
         </div>
     </div>
 </div>
-
 <!-- КАЛЬКУЛЯТОР СТОИМОСТИ КОРМА -->
 <div class="calculator" id="calculator">
     <div class="container">
         <div class="calculator__block">
            <div class="block__title">РАССЧИТАЙТЕ СТОИМОСТЬ КОМБИКОРМА ДЛЯ БРОЙЛЕРОВ</div>
-           <div class="block__subtitle">Профессиональный калькулятор для точного расчета стоимости корма</div>
+           <div class="block__subtitle">Профессиональные калькуляторы для точного расчета стоимости корма</div>
 
+           <!-- НАЗВАНИЕ РАЦИОНА СВЕРХУ -->
+           <div class="calculator__header-section">
+               <h3 class="calculator__section-title" id="rationTitle">РАЦИОН ПС (Старт) - BIOMIX ПС-(0112) 3.5%</h3>
+               
+               <!-- КНОПКИ ВЫБОРА РАЦИОНОВ -->
+               <div class="calculator__tabs">
+                   <button class="calculator__tab active" onclick="switchRation(1)">РАЦИОН ПС (Старт)</button>
+                   <button class="calculator__tab" onclick="switchRation(2)">РАЦИОН ПКС (Рост)</button>
+                   <button class="calculator__tab" onclick="switchRation(3)">РАЦИОН ПКС (Финиш)</button>
+                   <button class="calculator__tab" onclick="switchRation(4)">РАЦИОН ПСП</button>
+                   <button class="calculator__tab" onclick="switchRation(5)">РАЦИОН ПКПС</button>
+                   <button class="calculator__tab" onclick="switchRation(6)">РАЦИОН КПСП</button>
+               </div>
+           </div>
+
+           <!-- ЕДИНЫЙ КАЛЬКУЛЯТОР -->
            <div class="calculator__content">
                <form id="feedCalculator" method="post">
                    <table class="calculator__table">
@@ -111,17 +125,17 @@
                            <tr>
                                <th>&nbsp;</th>
                                <th>&nbsp;</th>
-                               <th class="calculator__header" scope="col">Старт</th>
+                               <th class="calculator__header" scope="col" id="rationHeader">Старт</th>
                            </tr>
                            <tr>
                                <th class="calculator__label">Возраст</th>
                                <th>&nbsp;</th>
-                               <th scope="col">0-10</th>
+                               <th scope="col" id="rationAge">0-10 дней</th>
                            </tr>
                            <tr>
                                <th class="calculator__label">Код продукта</th>
                                <th>&nbsp;</th>
-                               <th scope="col">BS 20</th>
+                               <th scope="col" id="rationCode">BIOMIX ПС-(0112) 3.5%</th>
                            </tr>
                        </thead>
                        <tbody>
@@ -131,34 +145,39 @@
                                <td class="calculator__percentage-label">%</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__ingredient">Пшеница, 12.8%</th>
+                               <th scope="row" class="calculator__ingredient">Кукуруза сп8%</th>
                                <td><input name="n1" required size="8" type="text" value="0" class="calculator__input"></td>
-                               <td class="calculator__percentage">34,50</td>
+                               <td class="calculator__percentage" id="p1">20.00</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__ingredient">Кукуруза, 7.8% СП</th>
+                               <th scope="row" class="calculator__ingredient">Пшеница сп 12.5%</th>
                                <td><input name="n2" required size="8" type="text" value="0" class="calculator__input"></td>
-                               <td class="calculator__percentage">26,20</td>
+                               <td class="calculator__percentage" id="p2">37.34</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__ingredient">Соевый шрот, 46% СП</th>
+                               <th scope="row" class="calculator__ingredient">Шрот соевый сп 46%</th>
                                <td><input name="n3" required size="8" type="text" value="0" class="calculator__input"></td>
-                               <td class="calculator__percentage">33,60</td>
+                               <td class="calculator__percentage" id="p3">34.95</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__ingredient">Шрот подсолнечный сп 30.0%</th>
+                               <td><input name="n4" required size="8" type="text" value="0" class="calculator__input"></td>
+                               <td class="calculator__percentage" id="p4">0.00</td>
                            </tr>
                            <tr>
                                <th scope="row" class="calculator__ingredient">Масло подсолнечное</th>
                                <td><input name="n5" required size="8" type="text" value="0" class="calculator__input"></td>
-                               <td class="calculator__percentage">1,00</td>
+                               <td class="calculator__percentage" id="p5">2.48</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__ingredient">Ronomix, Start 20</th>
-                               <td><input name="n6" required size="8" type="text" value="38080" class="calculator__input"></td>
-                               <td class="calculator__percentage">3,50</td>
+                               <th scope="row" class="calculator__ingredient">Известняковая мука</th>
+                               <td><input name="n6" required size="8" type="text" value="0" class="calculator__input"></td>
+                               <td class="calculator__percentage" id="p6">1.73</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__ingredient">Известняк</th>
-                               <td><input name="n7" required size="8" type="text" value="0" class="calculator__input"></td>
-                               <td class="calculator__percentage">1,20</td>
+                               <th scope="row" class="calculator__ingredient" id="biomixName">BIOMIX ПС-(0112) 3.5%</th>
+                               <td><input name="n7" required size="8" type="text" value="38080" class="calculator__input"></td>
+                               <td class="calculator__percentage" id="p7">3.50</td>
                            </tr>
                            <tr class="calculator__total-row">
                                <th scope="row" class="calculator__total-label">Итого за 1 кг корма:</th>
@@ -166,7 +185,7 @@
                                    <input type="button" value="Рассчитать" onclick="calculateFeed()" class="calculator__button">
                                </td>
                                <td class="calculator__result-cell">
-                                   <input name="res2" readonly size="8" type="text" value="0.00" class="calculator__result">
+                                   <input name="result" readonly size="8" type="text" value="0.00" class="calculator__result">
                                </td>
                            </tr>
                            <tr class="calculator__spacer">
@@ -182,82 +201,62 @@
                            <tr>
                                <th scope="row" class="calculator__quality">Обменная Энергия +Ф</th>
                                <td class="calculator__unit">ккал/100г</td>
-                               <td class="calculator__value">301</td>
+                               <td class="calculator__value" id="q1">3000.39</td>
                            </tr>
                            <tr>
                                <th scope="row" class="calculator__quality">Сырой Протеин +Ф</th>
                                <td class="calculator__unit">%</td>
-                               <td class="calculator__value">23,20</td>
+                               <td class="calculator__value" id="q2">23.00</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__quality">Линолевая кислота</th>
+                               <th scope="row" class="calculator__quality">Кальций</th>
                                <td class="calculator__unit">%</td>
-                               <td class="calculator__value">1,62</td>
+                               <td class="calculator__value" id="q3">0.96</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Доступный фосфор</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value" id="q4">0.40</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Лизин</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value" id="q5">1.56</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Метионин</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value" id="q6">0.67</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Треонин</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value" id="q7">1.07</td>
+                           </tr>
+                           <tr>
+                               <th scope="row" class="calculator__quality">Триптофан</th>
+                               <td class="calculator__unit">%</td>
+                               <td class="calculator__value" id="q8">0.31</td>
                            </tr>
                            <tr>
                                <th scope="row" class="calculator__quality">Сырая клетчатка</th>
                                <td class="calculator__unit">%</td>
-                               <td class="calculator__value">3,82</td>
+                               <td class="calculator__value" id="q9">3.01</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__quality">Лизин усв.</th>
+                               <th scope="row" class="calculator__quality">Сырой жир</th>
                                <td class="calculator__unit">%</td>
-                               <td class="calculator__value">1,32</td>
+                               <td class="calculator__value" id="q10">4.68</td>
                            </tr>
                            <tr>
-                               <th scope="row" class="calculator__quality">Метионин усв.</th>
+                               <th scope="row" class="calculator__quality">Линолевая кислота</th>
                                <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0,71</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Мет. + Цистин усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">1,00</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Треонин усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0,88</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Триптофан усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0,21</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Аргинин усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">1,40</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Ca</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0,96</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">P усв.</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0,50</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">K</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0,90</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Na</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0,19</td>
-                           </tr>
-                           <tr>
-                               <th scope="row" class="calculator__quality">Cl</th>
-                               <td class="calculator__unit">%</td>
-                               <td class="calculator__value">0,24</td>
+                               <td class="calculator__value" id="q11">1.95</td>
                            </tr>
                            <tr>
                                <th scope="row" class="calculator__quality">Холин хлорид</th>
                                <td class="calculator__unit">г/т</td>
-                               <td class="calculator__value">1723</td>
+                               <td class="calculator__value" id="q12">2000</td>
                            </tr>
                        </tbody>
                    </table>
@@ -273,7 +272,6 @@
            <div class="block__title_w">Как с нами связаться?</div>
            <div class="block__subtitle_w">Звоните нам или отправьте сообщение</div>
 
-
            <div class="contacts__items">
              <div class="contact__item_1">
                 <div class="contacts__logo">
@@ -286,93 +284,138 @@
                      <br><br>Пишите на почту
                      <br>
                      <a class="mailto" href="mailto:info@biomix.uz" target="_blank">info@biomix.uz</a>
-<!--                     <br><br>Отправьте заявку</p>-->
-
-<!--
-                      <form class="form" action="send.php" method="post">
-                         <p class="form__text">Имя</p>
-                         <input class="input" placeholder="Ваше Имя" name="name" type="text">
-                         <p class="form__text">Телефон</p>
-                         <input class="input" placeholder="+998 XX XXX XX XX" name="number" type="text">
-                         <p class="form__text">Email</p>
-                         <input class="input" placeholder="example@mail.com" name="email" type="text">
-
-                         <p>Прикрепить файлы</p>
-                         <input type="file" name="userfile[]" multiple id="userfile" class="w100" accept="image/*" >
-
-                         <p><input class="btn" value="Отправить Заявку" type="submit"></p>
-
-                    </form>
-
--->
-<!--
-<form action="send.php" method="post">
-<input type="text" name="fio" placeholder="Укажите ФИО" required>
-<input type="text" name="email" placeholder="Укажите e-mail" required>
-<input type="submit" value="Отправить">
-</form>
--->
                 </p></div>
-
-
              </div>
 
              <div class="contact__item_1">
                 <iframe class="map" src="https://yandex.ru/map-widget/v1/?ll=69.332760%2C41.313934&amp;z=20&amp;l=map" width="100%" height="450" frameborder="0" style="border:0; border-radius: 10px;" allowfullscreen="">
                 </iframe>
-              </div>
-
+            </div>
            </div>
-
-
-
         </div>
     </div>
 </div>
 
-
 <footer class="footer">
+    
 
     <div class="copyright">
-    <a class="copyright__link" href="http://biomix.uz" target="_blank">© 2019г.  ООО «Great Investment Sales» Все права защищены.</a>
+        <a class="copyright__link" href="http://biomix.uz" target="_blank">© 2019г.  ООО «BIOPREMIX» Все права защищены.</a>
     </div>
-    <div class="creator">
-    <a class="creator__link" href="http://effective-studio.uz" target="_blank">Сайт создан в Effective Studio</a>
-    </div>
-
-    </footer>
-    </div>
+</footer>
 
 <!--  Javascript  -->
-    <script src="assets/js/app.js"></script>
-    
-    <script>
-        function calculateFeed() {
-            // Получаем значения из полей ввода
-            var n1 = parseFloat(document.getElementsByName('n1')[0].value) || 0;
-            var n2 = parseFloat(document.getElementsByName('n2')[0].value) || 0;
-            var n3 = parseFloat(document.getElementsByName('n3')[0].value) || 0;
-            var n5 = parseFloat(document.getElementsByName('n5')[0].value) || 0;
-            var n6 = parseFloat(document.getElementsByName('n6')[0].value) || 0;
-            var n7 = parseFloat(document.getElementsByName('n7')[0].value) || 0;
-            
-            // Проценты для каждого ингредиента
-            var percentages = [34.50, 26.20, 33.60, 1.00, 3.50, 1.20];
-            var prices = [n1, n2, n3, n5, n6, n7];
-            
-            // Рассчитываем общую стоимость
-            var total = 0;
-            for (var i = 0; i < prices.length; i++) {
-                total += (prices[i] * percentages[i] / 100);
-            }
-            
-            // Округляем до 2 знаков после запятой
-            total = Math.round(total * 100) / 100;
-            
-            // Выводим результат
-            document.getElementsByName('res2')[0].value = total.toFixed(2);
+<script src="assets/js/app.js"></script>
+
+<script>
+    // Данные для всех рационов (точные данные из таблиц)
+    const rationData = {
+        1: { // РАЦИОН ПС (Старт) - BIOMIX ПС-(0112) 3.5%
+            title: "РАЦИОН ПС (Старт) - BIOMIX ПС-(0112) 3.5%",
+            header: "Старт",
+            age: "0-10 дней",
+            code: "BIOMIX ПС-(0112) 3.5%",
+            biomixName: "BIOMIX ПС-(0112) 3.5%",
+            percentages: [20.00, 37.34, 34.95, 0.00, 2.48, 1.73, 3.50],
+            quality: [3000.39, 23.00, 0.96, 0.40, 1.56, 0.67, 1.07, 0.31, 3.01, 4.68, 1.95, 2000]
+        },
+        2: { // РАЦИОН ПКС (Рост) - BIOMIX ПКС (1328) 3.0%
+            title: "РАЦИОН ПКС (Рост) - BIOMIX ПКС (1328) 3.0%",
+            header: "Рост",
+            age: "11-28 дней",
+            code: "BIOMIX ПКС (1328) 3.0%",
+            biomixName: "BIOMIX ПКС (1328) 3.0%",
+            percentages: [20.00, 36.76, 28.09, 6.00, 5.04, 1.11, 3.00],
+            quality: [3100.33, 21.50, 0.87, 0.35, 1.40, 0.59, 0.97, 0.30, 2.93, 5.53, 2.23, 1900]
+        },
+        3: { // РАЦИОН ПКС (Финиш) - BIOMIX ПКС (2942) 3.0%
+            title: "РАЦИОН ПКС (Финиш) - BIOMIX ПКС (2942) 3.0%",
+            header: "Финиш",
+            age: "29-42 дня",
+            code: "BIOMIX ПКС (2942) 3.0%",
+            biomixName: "BIOMIX ПКС (2942) 3.0%",
+            percentages: [20.00, 39.06, 20.38, 10.00, 6.66, 0.90, 3.00],
+            quality: [3200.25, 19.50, 0.78, 0.33, 1.28, 0.58, 0.92, 0.28, 2.80, 6.50, 2.61, 1700]
+        },
+        4: { // РАЦИОН ПСП - BIOMIX ПСП (1328) 3.0%
+            title: "РАЦИОН ПСП - BIOMIX ПСП (1328) 3.0%",
+            header: "ПСП",
+            age: "11-28 дней",
+            code: "BIOMIX ПСП (1328) 3.0%",
+            biomixName: "BIOMIX ПСП (1328) 3.0%",
+            percentages: [20.00, 36.76, 28.09, 6.00, 5.04, 1.11, 3.00],
+            quality: [3100.50, 21.50, 0.87, 0.35, 1.39, 0.62, 0.99, 0.30, 2.94, 5.62, 2.35, 1900]
+        },
+        5: { // РАЦИОН ПКПС - BIOMIX ПКПС (1328) 3.0%
+            title: "РАЦИОН ПКПС - BIOMIX ПКПС (1328) 3.0%",
+            header: "ПКПС",
+            age: "11-28 дней",
+            code: "BIOMIX ПКПС (1328) 3.0%",
+            biomixName: "BIOMIX ПКПС (1328) 3.0%",
+            percentages: [20.00, 36.76, 28.09, 6.00, 5.04, 1.11, 3.00],
+            quality: [3100.46, 21.50, 0.87, 0.35, 1.38, 0.61, 0.98, 0.30, 2.93, 5.62, 2.35, 1900]
+        },
+        6: { // РАЦИОН КПСП - BIOMIX КПСП (1328) 3.0%
+            title: "РАЦИОН КПСП - BIOMIX КПСП (1328) 3.0%",
+            header: "КПСП",
+            age: "11-28 дней",
+            code: "BIOMIX КПСП (1328) 3.0%",
+            biomixName: "BIOMIX КПСП (1328) 3.0%",
+            percentages: [20.00, 36.76, 28.09, 6.00, 5.04, 1.11, 3.00],
+            quality: [3100.70, 21.50, 0.87, 0.35, 1.38, 0.61, 0.98, 0.30, 2.93, 5.62, 2.35, 1900]
         }
-    </script>
+    };
+
+    let currentRation = 1;
+
+    // Функция переключения рационов
+    function switchRation(rationNumber) {
+        currentRation = rationNumber;
+        const data = rationData[rationNumber];
+        
+        // Обновляем заголовки
+        document.getElementById('rationTitle').textContent = data.title;
+        document.getElementById('rationHeader').textContent = data.header;
+        document.getElementById('rationAge').textContent = data.age;
+        document.getElementById('rationCode').textContent = data.code;
+        document.getElementById('biomixName').textContent = data.biomixName;
+        
+        // Обновляем проценты ингредиентов
+        for (let i = 1; i <= 7; i++) {
+            document.getElementById('p' + i).textContent = data.percentages[i-1].toFixed(2);
+        }
+        
+        // Обновляем показатели качества
+        for (let i = 1; i <= 12; i++) {
+            document.getElementById('q' + i).textContent = data.quality[i-1];
+        }
+        
+        // Обновляем активную кнопку
+        document.querySelectorAll('.calculator__tab').forEach(tab => tab.classList.remove('active'));
+        event.target.classList.add('active');
+        
+        // Очищаем поля ввода и результат
+        document.querySelectorAll('.calculator__input').forEach(input => input.value = '');
+        document.querySelector('input[name="n7"]').value = '38080'; // Цена BIOMIX
+        document.querySelector('input[name="result"]').value = '0.00';
+    }
+
+    // Функция расчета
+    function calculateFeed() {
+        const data = rationData[currentRation];
+        let total = 0;
+        
+        for (let i = 1; i <= 7; i++) {
+            const price = parseFloat(document.querySelector(`input[name="n${i}"]`).value) || 0;
+            const percentage = data.percentages[i-1];
+            total += (price * percentage / 100);
+        }
+        
+        total = Math.round(total * 100) / 100;
+        document.querySelector('input[name="result"]').value = total.toFixed(2);
+    }
+</script>
 
 </body>
 </html>
+
